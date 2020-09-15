@@ -10,9 +10,11 @@ $turma = [
     ];
     $total = 0;
     $i = 0;
-foreach ($turma as list(&$valor,&$valor2,&$valor3)) {
+foreach ($turma as $aluno => list(&$valor,&$valor2,&$valor3)) {
     $total = ($valor + $valor2 + $valor3)/3;
     $i = $i+1;
-    echo "A média do $i# aluno é ". round($total,2) . "<br>";
+
+
+    echo "A média do aluno $aluno é ". round($total,2) . "<br>";
 }
 ?>
