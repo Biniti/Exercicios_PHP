@@ -9,23 +9,20 @@ $turma = [
     "F" => [2,3,5]
     ];
     $total = 0;
-    $i = 0;
     $j = 0;
-    # J e i são contadores, o J serve pra contar a quantidade de alunos que passaram por média
-    # e o i serve pra separar os alunos entre, primeiro, segundo e etc
-    # assim como primeiro se refere ao aluno A, segundo ao aluno B e etc
-foreach ($turma as list(&$valor,&$valor2,&$valor3)) {
+    # J é um contador, o J serve pra contar a quantidade de alunos que passaram por média
+foreach ($turma as $aluno =>list(&$valor,&$valor2,&$valor3)) {
     $total = ($valor + $valor2 + $valor3)/3;
-    $i += 1;
+
     if ($total > 6)
     {
-        echo"O $i# aluno passou com média ". round($total,2). "<br>"; 
+        echo"O aluno $aluno  passou com média ". round($total,2). "<br>"; 
         
         $j++;
     }
     else 
     {
-        echo "O $i# aluno reprovou com média " .round($total,2) ."<br>"; 
+        echo "O  aluno  $aluno reprovou com média " .round($total,2) ."<br>"; 
     }
 }
 echo "<br>"."A quantidade alunos que passou por média foi $j";
